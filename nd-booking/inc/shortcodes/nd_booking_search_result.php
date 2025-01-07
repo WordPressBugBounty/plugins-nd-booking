@@ -621,7 +621,8 @@ function nd_booking_sorting_php() {
         //START loop
         while ( $the_query->have_posts() ) : $the_query->the_post();
 
-            $nd_booking_layout_selected = dirname( __FILE__ ).'/include/search-results/nd_booking_post_preview-'.$nd_booking_search_filter_layout.'.php';
+            #$nd_booking_layout_selected = dirname( __FILE__ ).'/include/search-results/nd_booking_post_preview-'.$nd_booking_search_filter_layout.'.php';
+            $nd_booking_layout_selected = dirname( __FILE__ ).'/include/search-results/nd_booking_post_preview-1.php';
             include realpath($nd_booking_layout_selected);
 
         endwhile;
