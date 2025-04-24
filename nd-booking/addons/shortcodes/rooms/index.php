@@ -35,7 +35,14 @@ function nd_booking_ss_rooms( $nd_booking_atts ) {
 
     //get the layout selected
     $nd_booking_layout_selected = dirname( __FILE__ ).'/layout/'.$nd_booking_ss_rooms_layout.'.php';
-    include realpath($nd_booking_layout_selected);
+
+    if ( str_contains( $nd_booking_layout_selected, '/wp-content/plugins/nd-booking/addons/shortcodes/rooms/layout/layout-1.php') ) {
+        include realpath($nd_booking_layout_selected);
+    }
+
+    if ( str_contains( $nd_booking_layout_selected, '/wp-content/plugins/nd-booking/addons/shortcodes/rooms/layout/layout-2.php') ) {
+        include realpath($nd_booking_layout_selected);
+    }
 
 	wp_reset_postdata();
 

@@ -2,8 +2,8 @@
 Contributors: nicdark
 Tags: booking, hotel, travel, book
 Requires at least: 4.5
-Tested up to: 6.6
-Stable tag: 3.6
+Tested up to: 6.8
+Stable tag: 3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,9 @@ This plugin is an useful system to manage all your booking.
 1. Install and activate the plugin.
 
 == Changelog ==
+
+= 3.7 =
+* fixed Local File Inclusion on nd_booking_ss_rooms shortcode
 
 = 3.6 =
 * fixed Local File Inclusion on search shortcode
