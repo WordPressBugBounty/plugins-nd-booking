@@ -17,7 +17,17 @@ function nd_booking_ss_rooms( $nd_booking_atts ) {
     $nd_booking_str = '';
 
     //default values
-    if ( $nd_booking_ss_rooms['layout'] == '' ) { $nd_booking_ss_rooms_layout = 'layout-1'; }else { $nd_booking_ss_rooms_layout = 'layout-'.$nd_booking_ss_rooms['layout']; }
+    if ( $nd_booking_ss_rooms['layout'] == '' ) { 
+        
+        $nd_booking_ss_rooms_layout = 'layout-1'; 
+
+    }else{ 
+
+        $nd_booking_ss_rooms_layout = 'layout-'.$nd_booking_ss_rooms['layout']; 
+    }
+    //get the layout selected
+    $nd_booking_layout_selected = dirname( __FILE__ ).'/layout/'.$nd_booking_ss_rooms_layout.'.php';
+    
     if ( $nd_booking_ss_rooms['qnt'] == '' ) { $nd_booking_ss_rooms_qnt = -1; }else { $nd_booking_ss_rooms_qnt = $nd_booking_ss_rooms['qnt']; }
     if ( $nd_booking_ss_rooms['order'] == '' ) { $nd_booking_ss_rooms_order = 'ASC'; }else { $nd_booking_ss_rooms_order = $nd_booking_ss_rooms['order']; }
     if ( $nd_booking_ss_rooms['orderby'] == '' ) { $nd_booking_ss_rooms_orderby = 'title'; }else { $nd_booking_ss_rooms_orderby = $nd_booking_ss_rooms['orderby']; }
@@ -33,15 +43,19 @@ function nd_booking_ss_rooms( $nd_booking_atts ) {
     );
     $the_query = new WP_Query( $args );
 
-    //get the layout selected
-    $nd_booking_layout_selected = dirname( __FILE__ ).'/layout/'.$nd_booking_ss_rooms_layout.'.php';
+        
+    //inlude
+    if ( $nd_booking_ss_rooms_layout == 'layout-1' ){
 
-    if ( str_contains( $nd_booking_layout_selected, '/wp-content/plugins/nd-booking/addons/shortcodes/rooms/layout/layout-1.php') ) {
+        $nd_booking_layout_selected = dirname( __FILE__ ).'/layout/layout-1.php';
         include realpath($nd_booking_layout_selected);
     }
 
-    if ( str_contains( $nd_booking_layout_selected, '/wp-content/plugins/nd-booking/addons/shortcodes/rooms/layout/layout-2.php') ) {
+    if ( $nd_booking_ss_rooms_layout == 'layout-2' ){
+
+        $nd_booking_layout_selected = dirname( __FILE__ ).'/layout/layout-2.php';
         include realpath($nd_booking_layout_selected);
+    
     }
 
 	wp_reset_postdata();

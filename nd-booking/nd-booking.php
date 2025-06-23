@@ -2,7 +2,7 @@
 /*
 Plugin Name:       Hotel Booking
 Description:       The plugin is used to manage your booking. To get started: 1) Click the "Activate" link to the left of this description. 2) Follow the documentation for installation for use the plugin in the better way.
-Version:           3.7
+Version:           3.8
 Plugin URI:        https://nicdark.com
 Author:            Nicdark
 Author URI:        https://nicdark.com
